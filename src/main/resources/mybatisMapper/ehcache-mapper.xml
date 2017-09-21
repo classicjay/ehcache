@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ehcache.ehcache.mapper.EhcacheMapper">
+    <select id="getData" resultType="java.util.HashMap" parameterType="String">
+        select * from DM_KPI_DATA_GJ_D where 1 = 1
+        <if test="null != monthId and '' != monthId">
+            and MONTH_ID = #{monthId}
+        </if>
+    </select>
+
+</mapper>
